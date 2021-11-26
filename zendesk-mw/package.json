@@ -1,0 +1,19 @@
+{
+  "name": "zendesk-mw",
+  "version": "1.0.0",
+  "description": "Backend Middleware to fetch api data from zendesk api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Sai kiran Davvuluri",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.15"
+  }
+}
