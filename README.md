@@ -7,15 +7,15 @@ Application Overview:
 This application was built for the Zendesk Coding Challenges as per the requirements given below.
 Frontend has been constructed using React and the server side code i.e. the backend code was developed using Node.
 
-Zendesk Ticket Viewer
+Requirements:
 
 Zendesk is a customer service tool that allows the creation and management of support tickets.
 Your company needs you to build a Ticket Viewer that will:
-● Connect to the Zendesk API
-● Request all the tickets for your account
-● Display them in a list
-● Display individual ticket details
-● Page through tickets when more than 25 are returned
+1. Connect to the Zendesk API
+2. Request all the tickets for your account
+3. Display them in a list
+4. Display individual ticket details
+5. Page through tickets when more than 25 are returned
 
 Steps needed to run the code:
 
