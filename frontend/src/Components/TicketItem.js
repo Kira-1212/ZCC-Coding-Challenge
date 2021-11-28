@@ -13,25 +13,21 @@ export class TicketItem extends Component {
         this.setState({ isPopUpOpen: true })
     }
     handleClose = () => {
-        console.log("close")
-        // this.setState(prevState => ({
-        //     isPopUpOpen: !prevState.isPopUpOpen
-        // }));
         this.setState({ isPopUpOpen: false })
     }
     render() {
-        console.log(this.state.isPopUpOpen)
         const item = this.props.data
         return (
             <React.Fragment>
                 <Dialog
-                    // fullScreen={fullScreen}
                     open={this.state.isPopUpOpen}
                     onClose={this.handleClose}
                     aria-labelledby="responsive-dialog-title"
+                    maxWidth="md"
+                    fullWidth
                 >
-                    <DialogTitle id="responsive-dialog-title">
-                        {"Description"}
+                    <DialogTitle id="responsive-dialog-title" style={{textAlign:'center'}}>
+                        {"Ticket Details"}
                     </DialogTitle>
                     <DialogContent>
                         <DialogContentText>
@@ -39,18 +35,34 @@ export class TicketItem extends Component {
                         </DialogContentText>
                     </DialogContent>
                     <DialogActions>
-                        <Button autoFocus onClick={this.handleClose}>
-                            Close
-                        </Button>
+                        <div className ="container">
+                            <div className = "row">                         
+                                <div className = "col-md-4">   
+                                    Requester ID: {item.requester_id}
+                                </div>
+                                <div className = "col-md-4">   
+                                    Submitter ID: {item.submitter_id}
+                                </div>  
+                                <div className = "col-md-4">   
+                                    Assignee ID {item.assignee_id}
+                                </div> 
+                            </div>
+                            <div className = "row" style={{marginTop:"10px"}} >
+                                <div className = "col-md-12">
+                                    <center><Button autoFocus onClick={this.handleClose}>
+                                        Close
+                                    </Button></center>   
+                                </div>
+                            </div>
+                        </div>
                     </DialogActions>
                 </Dialog>
-                <tr className="table-active " onClick={this.openPopUp}>
+                <tr className="table-active" onClick={this.openPopUp}>
                     <th scope="row">{item.subject}</th>
                     <td>{item.status}</td>
                     <td>{item.created_at}</td>
                     <td>{item.updated_at}</td>
                     <td >{item.priority}</td>
-
                 </tr>
             </React.Fragment>
         )
